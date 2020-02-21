@@ -3,7 +3,7 @@ Operating Systems Lab 2 (SOFE 3950U)
 
 ## How to run the Shell Program:
 
-1) In order to run the Shell program, use make command to compile myshell.c file. Once compiling, execute the program using the command: ./myshell (Can also run enter all commands into a file, then include the name of the file as a command line argument to the myshell program: ./myshell batchfile)
+1) In order to run the Shell program, use the make command to compile myshell.c file. Once compiling, execute the program using the command: ./myshell (Can also run enter all commands into a file, then include the name of the file as a command line argument to the myshell program: ./myshell batchfile)
 
 ## List of Commands:
 
