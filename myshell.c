@@ -1,13 +1,5 @@
 //myshell C file
 
-/*
- * MyShell Project for SOFE 3950U: Operating Systems Lab 2
- *
- * Copyright (C) 2020, <Sunil Tumkur, Matthew Brown, Eric Tsim,>
- * All rights reserved.
- * 
- */
-
 //include all the necessary libraries
 #include <stdio.h>
 #include <stdlib.h>
@@ -27,6 +19,41 @@
 
 int int main(int argc, char *argv[], char **envp)
 {
-	/* code */
+	// Input buffer and and commands 
+	char buffer[BUFFER_LEN] = {0};
+	char command[BUFFER_LEN] = {0};
+
+	char *token;
+	const char s[2] = " ";
+	const char *arr[3];
+	(void)argc;
+	(void)argv;
+
+	//current working directory of size 512
+	char cwd[512];
+
+	//getcwd() function shall place an absolute pathname of the current working directory in the array pointed to by cwd, and return cwd
+	if (getcwd(cwd, sizeof(cwd)) != NULL) {
+		
+		//print current working directory
+		printf("%s ", cwd);
+	}
+
+	else {
+
+		//print out an error if you cant find and display current working directory 
+		perror("getcwd error!")
+		return -1;
+	}
+
+	//Parse commands given using argc ad argv and perfirn an infinite loop getting command input from users
+
+
+
+
+
+
+
+
 	return 0;
 }
