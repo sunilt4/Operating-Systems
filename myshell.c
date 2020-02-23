@@ -63,6 +63,37 @@ int int main(int argc, char *argv[], char **envp)
 			token = strtok(NULL, s);
 			counter++;
 		}
+
+		//check if the input was cd
+		if (strcmp(command, "cd\0") == 0) {
+
+			int var;
+			var = chdir(arr[1]);
+
+			if (var) {
+
+				int ern = error;
+				frprintf(stderr, "Error in chdir ('%s') errno = %d: %s\n", arr[1], ern, strerror(ern));
+			}
+
+			else if (strcmp(command, "dir\n") == 0) {
+
+				DIR *d;
+				struct dirent *dir;
+				d = opendir(".");
+
+				if (d) {
+
+					while ((dir = readdir(d)) != NULL) {
+
+						printf("%s\n", dir->d_name);
+					}
+					closedir(d);
+				}
+
+				//check if input was quit
+			}
+		}
 	}
 
 
