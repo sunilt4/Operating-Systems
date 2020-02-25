@@ -1,5 +1,11 @@
 # Operating-Systems
-Operating Systems Lab 2 (SOFE 3950U) 
+Operating Systems Lab 2 (SOFE 3950U)
+
+Group Members:
+SUNIL TUMKUR 100620430
+ERIC TSIM 
+MATTHEW BROWN
+FAISAL PINDER 
 
 ## How to run the Shell Program:
 
