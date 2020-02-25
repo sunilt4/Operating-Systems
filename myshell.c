@@ -93,6 +93,61 @@ int int main(int argc, char *argv[], char **envp)
 
 				//check if input was quit
 			}
+
+			else if (strcmp(command, "quit\n") == 0) {
+				//other commands go here...
+				//quit command will exit the shell
+
+				return EXIT_SUCCESS;
+				//check if input was clr (clear)
+			}
+
+			else if (strcmp(command, "clr\n") == 0) {
+				for (int i=0; i<80; i++) {
+					printf("\n");
+				}
+			}
+
+			//check if input was pause
+			else if (strcmp(command, "pause\n") == 0) {
+				char chr = '\0';
+				while(chr != '\n') {
+					printf("Press the ENTER key on the keyboard to Continue\n");
+					scanf("%c", &chr);
+				}
+			}
+
+			//check if the input was echo
+			else if (strcmp(command, "echo\0") == 0) {
+				printf("%s %s", arr[1], arr[2]);
+			}
+
+			//check if the input was help 
+			else if (strcmp(command, "help\n") == 0) {
+				char c;
+				FILE *fp;
+            	fp=fopen("README.md","rt");
+
+            	while((c=fgetc(f))!=EOF){
+                printf("%c",c);
+
+                 fclose(fp);
+               	}
+			}
+
+			//check if the input was environ
+			else if (strcmp(command, "environ\n") == 0) {
+
+				for (char **env = envp; *env != 0; env++) {
+                	char *thisEnv = *env;
+                	printf("%s\n", thisEnv);    
+              	}
+			}
+
+			else {
+				//Unsupported command
+				fputs("Unsupported command, use help to display the manual\n", stderr);
+			}
 		}
 	}
 
