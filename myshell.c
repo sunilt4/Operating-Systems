@@ -40,7 +40,7 @@ int int main(int argc, char *argv[], char **envp)
 
 	else {
 		//print out an error if you cant find and display current working directory 
-		perror("getcwd error!")
+		perror("getcwd error!");
 		return 1;
 	}
 
@@ -148,15 +148,19 @@ int int main(int argc, char *argv[], char **envp)
 				//Unsupported command
 				fputs("Unsupported command, use help to display the manual\n", stderr);
 			}
+
+			// clearing the command memory
+			memset(command, 0, sizeof(command));
+
+			//printing the current working directory
+			if(getcwd(cwd, sizeof(cwd)) != NULL) {
+            	printf("%s ", cwd);
+        	} 
+        	else {
+        		perror("getcwd error");
+            	return 1;
+        	}
 		}
+
+		return EXIT_SUCCESS;
 	}
-
-
-
-
-
-
-
-
-	return 0;
-}
