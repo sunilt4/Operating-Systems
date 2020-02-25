@@ -1,3 +1,9 @@
+/* GROUP 14
+SUNIL TUMKUR 100620430
+ERIC TSIM
+MATTHEW BROWN
+FAISAL PINDER
+*/
 //myshell C file
 
 //include all the necessary libraries
@@ -17,7 +23,7 @@
 // Put macros or constants here using #define
 #define BUFFER_LEN 256
 
-int int main(int argc, char *argv[], char **envp)
+int main(int argc, char *argv[], char **envp)
 {
 	// Input buffer and and commands 
 	char buffer[BUFFER_LEN] = {0};
@@ -46,7 +52,7 @@ int int main(int argc, char *argv[], char **envp)
 
 	//Parse commands given using argc ad argv and perfirn an infinite loop getting command input from users
 
-	while (fegts(buffer, BUFFER_LEN, stdin) != NULL {
+	while (fgets(buffer, BUFFER_LEN, stdin) != NULL) {
 
 		// Perform string tokenization to get the command and argument
 		token = strtok(buffer, s);
@@ -72,9 +78,10 @@ int int main(int argc, char *argv[], char **envp)
 
 			if (var) {
 
-				int ern = error;
-				frprintf(stderr, "Error in chdir ('%s') errno = %d: %s\n", arr[1], ern, strerror(ern));
+				int ern = errno;
+				fprintf(stderr, "Error in chdir('%s') errno = %d: %s\n", arr[1], ern, strerror(ern));
 			}
+		}
 
 			else if (strcmp(command, "dir\n") == 0) {
 
@@ -124,15 +131,16 @@ int int main(int argc, char *argv[], char **envp)
 
 			//check if the input was help 
 			else if (strcmp(command, "help\n") == 0) {
-				char c;
 				FILE *fp;
+				char c;
             	fp=fopen("README.md","rt");
 
-            	while((c=fgetc(f))!=EOF){
+            	while((c=fgetc(fp))!=EOF){
                 printf("%c",c);
 
-                 fclose(fp);
                	}
+
+               	fclose(fp);
 			}
 
 			//check if the input was environ
