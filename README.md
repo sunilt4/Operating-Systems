@@ -13,7 +13,7 @@ FAISAL PINDER 100629476
 
 ## List of Commands:
 
-1) cd ./<directory> - Change current defualt directory to <directory>. If the <directory> argument is not present then report the current directory. If the directory does not exist then an appropriate error should be reported.
+1) cd <directory> - Change current defualt directory to <directory>. If the <directory> argument is not present then report the current directory. If the directory does not exist then an appropriate error should be reported.
 2) clr - Clear the screen
 3) dir <directory> - List the contents of the directory <directory>
 4) environ - List all enviroment strings
