@@ -1,8 +1,8 @@
 /* GROUP 14
 SUNIL TUMKUR 100620430
 ERIC TSIM 100560172
-MATTHEW BROWN
-FAISAL PINDER
+MATTHEW BROWN 100670025
+FAISAL PINDER 100629476
 */
 //myshell C file
 
@@ -66,7 +66,7 @@ int main(int argc, char *argv[], char **envp)
 			}
 
 			arr[counter] = token;
-			token = strtok(NULL, s);
+			token = strtok(NULL, "\n");
 			counter++;
 		}
 
@@ -126,7 +126,7 @@ int main(int argc, char *argv[], char **envp)
 
 			//check if the input was echo
 			else if (strcmp(command, "echo\0") == 0) {
-				printf("%s %s", arr[1], arr[2]);
+				printf("%s %s \n", arr[1], arr[2]);
 			}
 
 			//check if the input was help 
